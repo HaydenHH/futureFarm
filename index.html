@@ -131,7 +131,7 @@ let isthing1=true
             <p class="my-text">Max 125L</p>
             <div class="mt-6"></div>
 
-            <img class="w-10 absolute right-[360px] top-[260px]" relative src="./img/icon01.svg">
+            <img class="w-10 absolute right-[360px] top-[260px]" id="removeFogButton" relative src="./img/icon01.svg">
 
         </div>
 
@@ -218,11 +218,16 @@ let isthing1=true
     <script src="./sketch.js"></script>
 
     <script>
-
+        let fogShow = true
+        const removeFogButton = document.querySelector('#removeFogButton')
+        removeFogButton.addEventListener('click',()=>{
+            fogShow=false
+         
+        })
         const canvas = document.getElementById("renderCanvas"); // Get the canvas element
         const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
         let showSceneIndex = 1
-
+        
         setInterval(() => {
 
             // showSceneIndex = Math.floor(Math.random()*2)+1
@@ -301,7 +306,7 @@ let isthing1=true
 
 
 // 牛+号跟随 60才正常显示
-            const iconWithCow = new BABYLON.SpriteManager("iconManager", '/img/cowinfo.png', 10, { width:60, height:60 });
+            const iconWithCow = new BABYLON.SpriteManager("iconManager", './img/cowinfo.png', 10, { width:60, height:60 });
             const icon = new BABYLON.Sprite("icon3", iconWithCow);
            
             icon.width = 1/4;
@@ -345,6 +350,11 @@ let isthing1=true
                         document.querySelector('#cowInfo').classList.toggle('hidden')
                     }
             }
+
+            scene.onBeforeRenderObservable.add(()=>{
+                    fog.isVisible = fogShow
+                    
+                })
 
             return scene;
         };
@@ -413,6 +423,7 @@ let isthing1=true
                 const fog = new BABYLON.Sprite("icon2", fogWithCow);
                 fog.width =3
                 fog.height =3
+                
                 // icon.width = 2;
                 // icon.height = 1;
                 iconWithCow.isPickable = true;
@@ -436,6 +447,10 @@ let isthing1=true
                 // 精灵图信息
 
                 // icon.offsetY(10)
+
+                scene.onBeforeRenderObservable.add(()=>{
+                    fog.isVisible = fogShow
+                })
 
 
 
