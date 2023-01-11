@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MooMoo Paradise</title>
+    <!-- 网页icon -->
+    <link rel="shortcut icon" href="./img/webicon.png" type="image/x-icon">
+
+    <style>
+        body {
+            background-color:#232323
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./p5.min.js"></script>
+
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                green: '#08F9A9',
+                orange: '#F45E0C',    
+                blue: '#457FFC',   
+                grey:'#B4B4B5' ,
+                yellow:'#FFE800',}}}}
+      </script>
+
+        <script>
+let isthing1=true 
+              </script>
+
+</head>
+<body>
+
+
+<body class="h-screen w-screen relative" style="font-family:gotham" >
+    <canvas id="renderCanvas" class="absolute z-0 w-screen h-screen left-0 top-0 outline-none"
+       ></canvas>
+    <div class="tableBox absolute  w-64 m-10 font-bold">
+
+        <!-- 左边资料 -->
+        <div class="flex justify-between p-1">
+            <p class="text-grey">Date</p>
+                <p class="P-1 text-green">Sep 9th, 2022</p>
+        </div>
+
+        <div class="flex justify-between p-1">
+            <p class="text-grey">Temperature</p>
+                <p class="P-1 text-green">25℃</p>
+        </div>
+
+        <div class="flex justify-between p-1">
+            <p class="text-grey">Humidity</p>
+                <p class="P-1 text-green">45%</p>
+        </div>
+        <div class="flex justify-between p-1">
+            <p class="text-grey ">AQI</p>
+                <p class="P-1 font-bold text-green">Normal</p>
+        </div>
+
+        <div class="mt-6 text-teal-50">
+            <h1 class="p-1 text-green" style="font-size: 12px">METHANE CHANGE IN 6-HOUR</h1>
+            <img src="./img/chat01.svg" class="w-full mt-2" alt="">
+        </div>
+
+        <div class="mt-6 text-teal-50">
+            <h1 class="p-1 text-green" style="font-size: 12px">7-DAY FORECAST</h1>
+            <img src="./img/chat02.svg" class="w-full mt-2" alt="">
+        </div>
+
+        <div>
+            <h1 class="mt-6 text-green" style="font-size: 12px;">MAP</h1>
+            <div id="canvasBox" class="mt-2" alt=""> 
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 右边甲烷条 -->
+    <div class="absolute   right-10 top-10 w-[700px]">
+        <h1 class="text-orange text-right font-bold text-[14px]"> METHANE EMISSION - ENVIRONMENT</h1>
+        <div class="flex justify-end">
+            <div class=" mt-2 absolute translate-x-2 bg-orange bg-opacity-25 w-full h-6 rounded-3xl relative">
+            <div class="bg-orange h-full w-[380px] rounded-3xl absolute right-0 mypacity"></div>
+            </div>
+            <img class="w-2 absolute right left-10 -translate-y-2" relative src="./img/arrow.svg">
+        </div>
+
+        <div class="mt-2 text-orange text-right text-[8px]">
+            <p class="my-text">Max 250L</p>
+            <p class="my-text">Attention(80%) = 200L</p>
+            <p class="my-text">Alarm Reminding Reach to 225L</p>
+            <div class="mt-6"></div>
+        </div>
+
+        <h1 class="text-yellow text-right font-bold text-[14px]"> METHANE EMISSION - CATTLE</h1>        
+        <div class="flex justify-end">
+
+            <div class=" mt-2 absolute translate-x-2 bg-yellow bg-opacity-25 w-[500px] h-6 rounded-3xl relative">
+            <div class="bg-yellow h-full w-1/4 rounded-3xl absolute right-0"></div>
+            </div>
+            <img class="w-2 absolute right-[400px] -translate-y-2" relative src="./img/arrow2.svg">
+        </div>
+
+        <div class="mt-2 text-yellow text-right text-[8px]">
+            <p class="my-text">Max 250L</p>
+            <p class="my-text">Attention(80%) = 200L</p>
+            <p class="my-text">Alarm Reminding Reach to 225L</p>
+            <div class="mt-6"></div>
+        </div>
+
+        <h1 class="text-green text-right font-bold text-[14px]">GREEN ENERGY</h1>
+        <div class="translate-y"></div>
+
+        <div class="flex justify-end">
+
+            <div class=" mt-2 absolute translate-x-2 bg-green bg-opacity-25 w-[350px] h-6 rounded-3xl relative">
+                <div class="bg-green h-full w-[200px] rounded-3xl absolute right-0"></div>
+            </div>
+
+        </div>
+        <div class="mt-2 text-green text-right text-[8px]"  style="font-family: 'gotham';">
+            <p class="my-text">Max 125L</p>
+            <div class="mt-6"></div>
+
+            <img class="w-10 absolute right-[360px] top-[260px]" relative src="./img/icon01.svg">
+
+        </div>
+
+        <!-- 浓雾按钮 -->
+            <!-- <div class="mt-10 flex justify-end">
+
+            <div><img id="img8" src="./img/icon01.svg" style="height: 20px;"></div>
+            
+            <script>
+              
+            var oImg = document.getElementById('img8');
+              
+            var onOff = true;
+              
+            oImg.onclick = function() {
+                if ( onOff ) {
+                    oImg.src = '.img/icon01.svg';
+                    onOff = false;
+                }
+                else {
+                    oImg.src = '.img/sky.jpg';
+                    onOff = true;
+                }
+            };
+            </script>
+
+         </div> -->
+         
+
+        <!-- 菜单 -->
+        <div class="menu z-10 fixed left-0 bottom-0">
+            <div class="toggle">
+                <img src="./img/icon +.svg" alt="">
+            </div>
+
+            <li style="--i:0;">
+
+                <a href="user.html">
+                    <img src="./img/icon user.svg" alt="">
+                </a>
+            </li>
+
+            <li style="--i:1;">
+                <a href="#">
+                    <img id="icon2" src="./img/icon friends.svg" alt="">
+                </a>
+            </li>
+
+            <li style="--i:2;">
+                <a href="#">
+                    <img id="icon3" src="./img/icon other.svg" alt="">
+                </a>
+            </li>
+        </div>
+
+    </div>
+
+
+    <!-- +号点击出现 牛信息图位置 -->
+    <div id="cowInfoBox">
+        <img id="cowInfo" class="absolute w-[320px] left-[400px] top-52 hidden z-30" src="./img/info04.svg" alt="">
+    </div>
+
+    <!-- 这里定义弥散雾 和模式 雾暂时没有 -->
+    <!-- <div>
+        <img src="./img/xxx.png" class="absolute w-screen h-screen" alt="">
+        <img id="fog1" src="./img/fogs/fog0.png" alt="">
+    </div> -->
+
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        let toggle = document.querySelector('.toggle');
+        let menu = document.querySelector('.menu');
+        toggle.onclick = function () {
+            menu.classList.toggle('active')
+        }
+
+    </script>
+
+    <script src="./sketch.js"></script>
+
+    <script>
+
+        const canvas = document.getElementById("renderCanvas"); // Get the canvas element
+        const engine = new BABYLON.Engine(canvas, true); // Generate the BABYLON 3D engine
+        let showSceneIndex = 1
+
+        setInterval(() => {
+
+            // showSceneIndex = Math.floor(Math.random()*2)+1
+        }, 10000)
+
+
+        let fogImage = document.querySelector('#fog1')
+        let imageCount = 4
+        let fogTime = 3
+        // 浓雾时间
+        setInterval(()=>{
+            if(fogImage) fogImage.src = `./img/fogs/fog${Math.floor(Math.random()*imageCount)}.png`
+            
+        },fogTime*1000)
+        // 浓雾程度
+
+        // 切换场景1,2
+        function AddKeyListener(scene) {
+            scene.onKeyboardObservable.add((kbInfo) => {
+                switch (kbInfo.type) {
+                    case BABYLON.KeyboardEventTypes.KEYDOWN:
+                        // console.log("KEY DOWN: ", kbInfo.event.key);
+                        switch (kbInfo.event.key) {
+                            case '1':
+                                isthing1=true
+                                showSceneIndex = 1
+                                break
+                            case '2':
+                                isthing1=false
+                                showSceneIndex = 2
+                                break
+                        }
+                        break;
+                }
+            });
+        }
+
+        // Add your code here matching the playground format
+        // 室内场景
+        const createScene = function () {
+            const scene = new BABYLON.Scene(engine);
+            // scene.createDefaultEnvironment()
+            scene.createDefaultLight()
+            scene.clearColor = new BABYLON.Color4(0, 0, 0, 0)
+
+            // Fog
+            // scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
+            // scene.fogColor = new BABYLON.Color3.FromHexString('#eeeeef')
+            // scene.fogDensity = 0.01;
+            //  // 雾颜色 
+            AddKeyListener(scene)
+
+
+            const room = BABYLON.SceneLoader.ImportMeshAsync("", "./", "room.glb").then(res => {
+                res.meshes[0].rotate(BABYLON.Axis.Y, -Math.PI * 0.7)
+                res.meshes[0].position.y = 1.7
+
+                
+            })
+
+            const cow = BABYLON.SceneLoader.ImportMeshAsync("", "./", "cowfreeroom.glb").then(res => {
+                const  light0 = new BABYLON.DirectionalLight("DirectionalLight", new BABYLON.Vector3(2,1,2), scene);
+                light.intensity = 1
+                res.meshes[0].position.z = 1.05
+                res.meshes[0].position.y = 2
+                res.meshes[0].position.x = -0.6
+                //  房间牛位置
+
+                res.meshes[0].rotate(BABYLON.Axis.Y, Math.PI * 0.3)
+                res.meshes[0].scaling.setAll(1.5)
+
+                res.meshes[0].getChildMeshes()[0].metadata = "cow";
+                
+
+            })
+
+
+// 牛+号跟随 60才正常显示
+            const iconWithCow = new BABYLON.SpriteManager("iconManager", '/img/cowinfo.png', 10, { width:60, height:60 });
+            const icon = new BABYLON.Sprite("icon3", iconWithCow);
+           
+            icon.width = 1/4;
+            icon.height = 1/4;
+                
+            iconWithCow.isPickable = true;
+            icon.isPickable = true;
+
+            // 房间牛有雾，600才能显示
+            const fogWithCow = new BABYLON.SpriteManager("fogManager", './img/fogcow.png', 10, { width:10, height:100 });
+                const fog = new BABYLON.Sprite("icon2", fogWithCow);
+                fog.width =1.8
+                fog.height =1.8
+                
+                
+
+            icon.position = new BABYLON.Vector3(0, 3.7, 0)
+            fog.position = new BABYLON.Vector3(0.2, 3.8, -1)    
+
+
+            const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 5, new BABYLON.Vector3(0, 3.8, 0));
+            camera.fov = 1.2
+            camera.attachControl(document.body, true);
+            camera.upperBetaLimit = Math.PI/2
+              camera.position.y = -10
+            const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+
+
+            scene.onPointerDown = function castRay() {
+                var ray = scene.createPickingRay(scene.pointerX, scene.pointerY, BABYLON.Matrix.Identity(), camera);
+                var hit = scene.pickWithRay(ray);
+
+                if (hit.pickedMesh && hit.pickedMesh.metadata == "cow") {
+                    //
+                }
+
+                //  牛信息图点击出现
+                var pickResult = scene.pickSprite(this.pointerX, this.pointerY);
+                    if (pickResult.hit) {                        
+                        // alert(1)
+                        document.querySelector('#cowInfo').classList.toggle('hidden')
+                    }
+            }
+
+            return scene;
+        };
+
+// 户外场景
+        const createScene2 = function () {
+            const scene = new BABYLON.Scene(engine)
+            scene.createDefaultLight()
+            scene.clearColor = new BABYLON.Color4(0, 0, 0, 0)
+            
+
+            // Fog颜色，覆盖，场景2
+            // scene.fogMode = BABYLON.Scene.FOGMODE_EXP;
+            // scene.fogColor = new BABYLON.Color3.FromHexString('#EEEEEF')
+            // scene.fogDensity = 0.01;
+
+            const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 5, new BABYLON.Vector3(0, -.5, 0));
+            camera.fov = 20
+            console.log(camera.position);
+            camera.attachControl(document.body, true);
+            camera.upperBetaLimit = Math.PI/2-0.1
+            camera.lowerRadiusLimit=2
+            // 最近距离    
+            
+            
+            // 地面
+        // const gnd = BABYLON.MeshBuilder.CreatePlane("ground", { height: 320, width: 320 }, scene);
+        //     gnd.rotate(BABYLON.Axis.X, Math.PI / 2)
+
+
+
+
+            let cowRoot
+
+            const house = BABYLON.SceneLoader.ImportMeshAsync("", "./", "farmComp.glb").then(res => {
+                // res.meshes[0].rotate(BABYLON.Axis.Y, -Math.PI * 0.7)
+                res.meshes[0].position.y = 0
+                const  light = new BABYLON.DirectionalLight("DirectionalLight", new BABYLON.Vector3(4, -1, 2), scene);
+                light.intensity = 1
+                // const  light2 = new BABYLON.DirectionalLight("DirectionalLight", new BABYLON.Vector3(5, -10, 0), scene);
+                // light.intensity = 1
+
+                // var light3 = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(1, 10, 1), scene);
+            })
+
+
+            const cow = BABYLON.SceneLoader.ImportMeshAsync("", "./", "eatgrass.glb").then(res => {
+                let cowRoot = res.meshes[0]
+                cowRoot.position.z = -120
+                cowRoot.position.y = -.1
+
+                cowRoot.rotate(BABYLON.Axis.Y, Math.PI * 0.3)
+                cowRoot.scaling.setAll(1.5)
+
+                cowRoot.getChildMeshes()[0].metadata = "cow";
+
+                camera.setTarget(res.meshes[0])
+
+                const iconWithCow = new BABYLON.SpriteManager("treesManager", './img/cowinfo.png', 10, { width: 60, height: 60 });
+                // 牛跟随+号
+                const icon = new BABYLON.Sprite("icon", iconWithCow);
+                icon.width = 1/2;
+                icon.height = 1/2;
+
+                const fogWithCow = new BABYLON.SpriteManager("fogManager", './img/fogcow.png', 10, { width: 600, height: 600 });
+                const fog = new BABYLON.Sprite("icon2", fogWithCow);
+                fog.width =3
+                fog.height =3
+                // icon.width = 2;
+                // icon.height = 1;
+                iconWithCow.isPickable = true;
+    
+
+                icon.isPickable = true;
+
+                icon.position = cowRoot.position.add(new BABYLON.Vector3(.5, 2, 0))
+                fog.position = cowRoot.position.add(new BABYLON.Vector3(0.8, 1.5, 0))
+                // 更改精灵图位置
+                // fog.rotate(BABYLON.Axis.X, Math.PI /2)
+                // // 雾图片位置旋转
+
+                scene.onPointerDown = function (evt) {
+                    var pickResult = scene.pickSprite(this.pointerX, this.pointerY);
+                    if (pickResult.hit) {                        
+                        // alert(1)
+                        document.querySelector('#cowInfo').classList.toggle('hidden')
+                    }
+                };
+                // 精灵图信息
+
+                // icon.offsetY(10)
+
+
+
+            })
+
+            const cow2 = BABYLON.SceneLoader.ImportMeshAsync("", "./", "eatgrass.glb").then(res => {
+                cowRoot = res.meshes[0]
+                cowRoot.position.z = -90
+                cowRoot.position.y = -.1
+
+                cowRoot.rotate(BABYLON.Axis.Y, Math.PI * 0.3)
+                cowRoot.scaling.setAll(1.5)
+
+                cowRoot.getChildMeshes()[0].metadata = "cow";
+
+            })
+
+            // 重复牛
+            const cow3 = BABYLON.SceneLoader.ImportMeshAsync("", "./", "cowdark.glb").then(res => {
+                let root = res.meshes[0]
+                root.position.z = -45
+                root.position.x = 10
+                root.position.y = -.1
+
+                root.rotate(BABYLON.Axis.Y, Math.PI * 0.3)
+                root.scaling.setAll(1.5)
+
+                root.getChildMeshes()[0].metadata = "cow";
+            })
+
+            const cow4 = BABYLON.SceneLoader.ImportMeshAsync("", "./", "cow.glb").then(res => {
+                let root = res.meshes[0]
+                root.position.z =-5
+                root.position.x = 80
+                root.position.y = -.1
+
+                root.rotate(BABYLON.Axis.Y, Math.PI * 0.6)
+                root.scaling.setAll(2)
+
+                root.getChildMeshes()[0].metadata = "cow";
+            })
+
+
+            const cow5 = BABYLON.SceneLoader.ImportMeshAsync("", "./", "eatgrass.glb").then(res => {
+                let root = res.meshes[0]
+                root.position.z =0
+                root.position.x = 80
+                root.position.y = -.1
+
+                root.rotate(BABYLON.Axis.Y, Math.PI)
+                root.scaling.setAll(2)
+
+                root.getChildMeshes()[0].metadata = "cow";
+            })
+
+
+
+            AddKeyListener(scene)
+            scene.onBeforeRenderObservable.add(() => {
+                if(cowRoot)cowRoot.position.z += 0.1
+            })
+
+            
+            return scene
+
+            
+        }
+
+        const scene = createScene();    
+         //Call the createScene function
+         
+        const scene2 = createScene2()
+
+        // Register a render loop to repeatedly render the scene
+        engine.runRenderLoop(function () {
+            // if (scene) scene.render();
+            switch (showSceneIndex) {
+                case 1:
+                    if (scene) scene.render()
+                    break;
+                case 2:
+                    if (scene2) scene2.render()
+                    break;
+            }
+        });
+
+        // Watch for browser/canvas resize events
+        window.addEventListener("resize", function () {
+            engine.resize();
+        });
+  
+
+    
+
+</script>
+
+
+</body>
+</html>

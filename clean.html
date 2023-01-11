@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clean Room</title>
+    
+            <style>
+                body {
+                    background-color: rgb(37, 38, 39)
+                }
+            </style>
+            <script src="https://cdn.tailwindcss.com"></script>
+    
+        
+            <script>
+                tailwind.config = {
+                  theme: {
+                    extend: {
+                      colors: {
+                        green: '#08F9A9',
+                        orange: '#F45E0C',    
+                        blue: '#457FFC',   
+                        grey:'#B4B4B5' ,
+                        yellow:'#FFE800',
+                      }
+                    }
+                  }
+                }
+              </script>
+        </head>
+<body>
+    <body class="h-screen w-screen relative" style="font-family:gotham" >
+        <canvas id="renderCanvas" class="absolute z-0 w-screen h-screen left-0 top-0 outline-none"
+           ></canvas>
+
+           <!-- 左边资料 -->
+        <div class="tableBox absolute  w-64 m-10">
+            <div class="flex justify-between p-1">
+                <p class="text-grey">DETAIL</p>
+            </div>
+    
+            <div class="flex justify-between p-1 font-bold">
+                <p class="text-grey">Room Number</p>
+                    <p class="P-1 text-orange">NO.008</p>
+            </div>
+    
+            <div class="flex justify-between mt-[30px]">
+                <p class="text-grey">CLEANLINESS</p>
+                <div class="absolute mt-[30px] translate-x-2 bg-blue bg-opacity-25 w-[240px] h-5 rounded-xl">
+                    <div class="bg-blue h-full w-[60px] rounded-xl">
+                    </div>
+                    </div>
+
+            </div>
+
+            <div class="flex justify-between">
+                <p class="mt-[50px] text-grey ">FOOD SUPPLIES</p>
+                <div class="absolute mt-[80px] translate-x-2 bg-yellow bg-opacity-25 w-[240px] h-5 rounded-xl" >
+                    <div class="bg-yellow h-full w-[180px] rounded-xl">
+         
+
+            </div>
+
+        </div>
+            </div>
+
+
+
+            <!-- 蓝黄色按钮 -->
+        
+                <div class="grid justify-items-start hover justify-items-center md justify-items-center
+                mt-[80px] bg-blue w-[180px] h-10 rounded-full" >
+                    <button id=but class="text-[20px]" >Clean Up</button>  
+                </div>
+
+             <div class="grid justify-items-start hover justify-items-center md justify-items-center
+                mt-[30px] bg-yellow bg-opacity-25 w-[180px] h-10 rounded-full" >
+                    <button id=but2 class="text-[20px] " >Feed Up</button>  
+                </div>
+                
+             <script>
+                document.querySelector('#but').addEventListener('click',()=>{
+                document.querySelector('#cleanup').classList.toggle('hidden')
+        })
+
+//    清洁洁面
+            document.querySelector('#cleanup').addEventListener('click',()=>{
+                    src="./img/clean.svg"
+            })
+             </script>
+        </div>
+            
+        <img class="absolute top-[320px] right-[600px]" id="cleanup" src="./img/clean.png" width="650px" >
+
+              </div>
+             </div>
+
+        </div>
+            
+        <!-- 右边甲烷条-->
+        <div class="absolute   right-10 top-10 w-[700px]">
+            <h1 class="text-orange text-right font-bold text-[14px]"> METHANE EMISSION - ENVIRONMENT</h1>
+            <div class="flex justify-end">
+                <div class=" mt-2 absolute translate-x-2 bg-orange bg-opacity-25 w-full h-6 rounded-3xl relative">
+                <div class="bg-orange h-full w-[380px] rounded-3xl absolute right-0 mypacity"></div>
+                </div>
+                <img class="w-2 absolute right left-10 -translate-y-2" relative src="./img/arrow.svg">
+            </div>
+    
+            <div class="mt-2 text-orange text-right text-[8px]">
+                <p class="my-text">Max 250L</p>
+                <p class="my-text">Attention(80%) = 200L</p>
+                <p class="my-text">Alarm Reminding Reach to 225L</p>
+                <div class="mt-6"></div>
+
+                <img class="absolute right-[5px] mt-[180px]" src="./img/f101.png" width="400px">
+
+            </div>
+
+
+            <!-- home 键 -->
+            <div class="menu fixed left-[80px] bottom-[70px]">
+                <a href="administrator.html">
+                    <div class="toggle" style="width:40px">
+                        <img src="./img/home.svg">
+                </div>
+
+</body>
+</html>

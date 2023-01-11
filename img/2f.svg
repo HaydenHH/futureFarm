@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 596.23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f45e0c;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: #ffe800;
+      }
+
+      .cls-7 {
+        fill: #dbdbdb;
+      }
+
+      .cls-8 {
+        fill: #5b5b5b;
+      }
+
+      .cls-3, .cls-4 {
+        font-family: Gotham-Bold, Gotham;
+        font-size: 14.56px;
+      }
+
+      .cls-9 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-10 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-4, .cls-11 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-5 {
+        font-family: Gotham-Medium, Gotham;
+        font-size: 83.19px;
+      }
+    </style>
+  </defs>
+  <g id="_指标" data-name="指标">
+    <g>
+      <g>
+        <text class="cls-3" transform="translate(259.81 587.35)"><tspan class="cls-11" x="0" y="0">NEED </tspan><tspan class="cls-10" x="44.94" y="0">T</tspan><tspan class="cls-9" x="53.57" y="0">O FEED</tspan></text>
+        <rect class="cls-1" x="220.77" y="570.42" width="25.81" height="25.81"/>
+      </g>
+      <g>
+        <rect class="cls-2" x="78.55" y="570.42" width="25.81" height="25.81"/>
+        <text class="cls-4" transform="translate(117.59 587.35)"><tspan x="0" y="0">NORMAL</tspan></text>
+      </g>
+      <g>
+        <rect class="cls-6" x="406.2" y="570.42" width="25.81" height="25.81"/>
+        <text class="cls-3" transform="translate(445.24 587.35)"><tspan class="cls-11" x="0" y="0">NEED </tspan><tspan class="cls-10" x="44.94" y="0">T</tspan><tspan class="cls-11" x="53.57" y="0">O CLEAN UP MANURE</tspan></text>
+      </g>
+    </g>
+    <g>
+      <rect class="cls-1" x="221.43" width="36.6" height="36.6"/>
+      <rect class="cls-6" x="422.37" width="36.6" height="36.6"/>
+      <g>
+        <rect class="cls-8" x="261.9" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="381.9" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="341.9" y="19.31" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="301.9" y="38.41" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="81.2" y="193.64" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="121.66" y="193.64" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="81.2" y="231.23" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="121.66" y="231.23" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="81.2" y="268.9" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="121.66" y="268.9" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="81.2" y="306.5" width="36.6" height="36.6"/>
+        <rect class="cls-8" x="121.66" y="306.5" width="36.6" height="36.6"/>
+      </g>
+    </g>
+    <text class="cls-5" transform="translate(287.22 296.47)"><tspan x="0" y="0">2F</tspan></text>
+    <path class="cls-7" d="M5.6,268.27l15.38-14.87c.91-.88,.91-2.3,0-3.17-.91-.88-2.38-.88-3.28,0L.68,266.69c-.9,.88-.9,2.3,0,3.17l17.02,16.45c.45,.44,1.05,.66,1.64,.66s1.19-.22,1.64-.66c.91-.88,.91-2.29,0-3.17l-15.38-14.86"/>
+    <path class="cls-7" d="M674.4,268.27l-15.38,14.86c-.91,.88-.91,2.29,0,3.17,.45,.44,1.05,.66,1.64,.66s1.19-.22,1.64-.66l17.02-16.45c.9-.87,.9-2.29,0-3.17l-17.02-16.45c-.91-.88-2.38-.88-3.28,0-.91,.87-.91,2.3,0,3.17l15.38,14.87"/>
+  </g>
+</svg>

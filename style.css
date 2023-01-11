@@ -1,0 +1,96 @@
+.myfont{
+ font-family: gotham;
+
+}
+
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu
+{
+    position: ab;
+    width:200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.menu li
+{
+position: absolute;
+left:0;
+list-style: none;
+transform-origin: 100px center;
+transition: 0.5s;
+transition-delay: calc(0.1s *var(--i));
+transform:rotate(90deg) translateX(90px);
+}
+
+.menu.menu.active li
+{
+transform: rotate(calc(180deg / 3 * var(--i))) rotate(90deg);
+
+}
+.menu li a
+{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    width:40px;
+    height: 40px;
+    /* background:rgb(37, 38, 39); */
+    border-radius: 50%;
+    transform: rotate(calc(360deg / -3 * var(--i))) rotate(-90deg) ;
+     color: #ffffff;
+     transition:s ;
+}
+.menu li a:hover 
+{
+    color: #ffffff; 
+    background-color:#08F9A9;
+}
+
+.toggle
+{
+    position: absolute;
+    width:40px;
+    height:40px;
+    background:#232323;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer; 
+    font-size: 2em;
+    transition: transform 1.25s;
+    transform: translateY(10px);
+}
+.menu.active .toggle
+{
+    transform: rotate(315deg);
+    background-color:#08F9A9;
+
+
+}
+
+#icon2{
+    transform: rotate(60deg) !important;
+}
+
+#icon3{
+    transform: rotate(120deg) !important;
+}
+
+#meaticon{
+    width: 500px;
+    position: center;
+}

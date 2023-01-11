@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 268.27">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f45e0c;
+      }
+
+      .cls-2 {
+        fill: #ffe800;
+      }
+
+      .cls-3 {
+        fill: #dbdbdb;
+      }
+
+      .cls-4 {
+        fill: #5b5b5b;
+      }
+
+      .cls-5 {
+        opacity: .5;
+      }
+
+      .cls-6 {
+        fill: #fff;
+        font-family: Gotham-Medium, Gotham;
+        font-size: 41.6px;
+      }
+    </style>
+  </defs>
+  <g id="_指标" data-name="指标">
+    <g class="cls-5">
+      <g>
+        <g>
+          <rect class="cls-1" x="110.72" width="18.3" height="18.3"/>
+          <rect class="cls-2" x="211.18" width="18.3" height="18.3"/>
+          <g>
+            <rect class="cls-4" x="50.25" y="9.66" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="50.6" y="38.75" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="40.6" y="58" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="50.6" y="77.18" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="70.48" y="9.66" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="130.95" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="190.95" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="170.95" y="9.66" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="150.95" y="19.2" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="271" y="38.75" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="271" y="19.95" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="250.89" y="4.93" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="291.23" y="38.75" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="271" y="57.54" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="271" y="76.34" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="291.23" y="57.54" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="40.6" y="96.82" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="60.83" y="96.82" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="40.6" y="115.62" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="60.83" y="115.62" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="40.6" y="134.45" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="60.83" y="134.45" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="40.6" y="153.25" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="50.64" y="172.48" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="40.6" y="192.07" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="30.47" y="211.65" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="50.62" y="230.89" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="70.78" y="249.97" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="90.62" y="240.39" width="18.3" height="18.3"/>
+            <rect class="cls-4" x="60.83" y="153.25" width="18.3" height="18.3"/>
+          </g>
+        </g>
+        <text class="cls-6" transform="translate(148.12 148.24)"><tspan x="0" y="0">1F</tspan></text>
+        <path class="cls-3" d="M2.8,134.14l7.69-7.43c.45-.44,.45-1.15,0-1.59-.45-.44-1.19-.44-1.64,0L.34,133.34c-.45,.44-.45,1.15,0,1.59l8.51,8.23c.23,.22,.52,.33,.82,.33s.59-.11,.82-.33c.45-.44,.45-1.15,0-1.59l-7.69-7.43"/>
+        <path class="cls-3" d="M337.2,134.14l-7.69,7.43c-.45,.44-.45,1.15,0,1.59,.23,.22,.52,.33,.82,.33s.59-.11,.82-.33l8.51-8.23c.45-.44,.45-1.15,0-1.59l-8.51-8.23c-.45-.44-1.19-.44-1.64,0-.45,.44-.45,1.15,0,1.59l7.69,7.43"/>
+      </g>
+    </g>
+  </g>
+</svg>

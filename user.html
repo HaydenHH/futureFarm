@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+
+    <style>
+        body {
+            background-color: rgb(37, 38, 39)
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        green: '#08F9A9',
+                        orange: '#F45E0C',
+                        blue: '#457FFC',
+                        grey: '#B4B4B5',
+                        yellow: '#FFE800',
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+
+<body>
+
+    <body class="h-screen w-screen relative" style="font-family:gotham">
+        <canvas id="renderCanvas" class="absolute z-0 w-screen h-screen left-0 top-0 outline-none"></canvas>
+        <!-- 左边 -->
+        <div class="tableBox absolute w-[320px] m-10">
+            <div class="flex justify-between p-1">
+                <p class="font-bold text-grey text-[22px]">DETIAL</p>
+            </div>
+
+            <div class="flex justify-between p-1">
+                <p class="font-bold text-grey text-[20px]">USER NAME</p>
+                <p class="font-bold text-orange text-[20px]">Quity</p>
+            </div>
+
+            <div class="mt-4 flex justify-between p-1">
+                <p class="text-grey text-[20px]">ID NO.</p>
+                <p class="text-green text-[20px]">NN20210915</p>
+            </div>
+
+            <div class="flex justify-between p-1">
+                <p class="text-grey text-[20px]">TIME</p>
+                <p class="text-green text-[20px]">12 Months</p>
+            </div>
+
+            <div class="flex justify-between p-1">
+                <p class="text-grey text-[20px]">GREEN POINTS</p>
+                <p class="text-yellow text-[20px]">66</p>
+            </div>
+
+
+            <!-- 蓝黄色按钮 -->
+            <div class=" grid justify-items-start
+            hover:justify-items-center 
+            md:justify-items-center 
+            mt-10 bg-blue bg-opacity-20 w-[180px] h-10 rounded-full">
+
+                <button class="text-[20px] text-black/25 ">ADD ENERGY</button>
+            </div>
+
+
+            <div class=" grid justify-items-start 
+             hover:justify-items-center
+             md:justify-items-center 
+             mt-10 bg-yellow w-[180px] h-10 rounded-full">
+
+                <button id="btn" class="text-[20px] ">CHANGE</button>
+
+            </div>
+
+        </div>
+        </div>
+
+        </div>
+
+
+        <div class="flex w-screen h-screen absolute top-0 left-0 justify-center items-center pointer-events-none">
+             <img id="meaticon" class="pointer-events-auto hidden " src="./img/meat1.png"/>
+        </div>
+
+        <div class="absolute   right-10 top-10 w-[700px]">
+            <h1 class="text-orange text-right font-bold text-[14px]"> METHANE EMISSION - ENVIRONMENT</h1>
+            <div class="flex justify-end">
+                <div class=" mt-2 absolute translate-x-2 bg-orange bg-opacity-25 w-full h-6 rounded-3xl relative">
+                    <div class="bg-orange h-full w-[380px] rounded-3xl absolute right-0 mypacity"></div>
+                </div>
+                <img class="w-2 absolute right left-10 -translate-y-2" relative src="./img/arrow.svg">
+            </div>
+
+            <div class="mt-2 text-orange text-right text-[8px]">
+                <p class="my-text">Max 250L</p>
+                <p class="my-text">Attention(80%) = 200L</p>
+                <p class="my-text">Alarm Reminding Reach to 225L</p>
+                <div class="mt-6"></div>
+            </div>
+
+            <h1 class="text-yellow text-right font-bold text-[14px]"> METHANE EMISSION - CATTLE</h1>
+            <div class="flex justify-end">
+
+                <div class=" mt-2 absolute translate-x-2 bg-yellow bg-opacity-25 w-[500px] h-6 rounded-3xl relative">
+                    <div class="bg-yellow h-full w-1/4 rounded-3xl absolute right-0"></div>
+                </div>
+                <img class="w-2 absolute  right-[400px] -translate-y-2" relative src="./img/arrow2.svg">
+            </div>
+
+            <div class="mt-2 text-yellow text-right text-[8px]">
+                <p class="my-text">Max 250L</p>
+                <p class="my-text">Attention(80%) = 200L</p>
+                <p class="my-text">Alarm Reminding Reach to 225L</p>
+                <div class="mt-6"></div>
+            </div>
+
+            <h1 class="text-green text-right font-bold text-[14px]">GREEN ENERGY</h1>
+            <div class="translate-y"></div>
+
+            <div class="flex justify-end">
+
+                <div class=" mt-2 absolute translate-x-2 bg-green bg-opacity-25 w-[350px] h-6 rounded-3xl relative">
+                    <div class="bg-green h-full w-[200px] rounded-3xl absolute right-0"></div>
+                </div>
+
+            </div>
+            <div class="mt-2 text-green text-right text-[8px]" style="font-family: 'gotham';">
+                <p class="my-text">Max 125L</p>
+                <div class="mt-6"></div>
+
+                <img class="w-10 absolute right-[360px] top-[260px]" relative src="./img/icon01.svg">
+
+            </div>
+
+
+            <!-- 点击返回主页 -->
+            <div class="menu fixed left-[-20px] bottom-[20px]">
+                <a href="index.html">
+                    <div class="toggle">
+                        <img src="./img/home.svg">
+                    </div>
+
+            </div>
+
+
+            <script>
+                let toggle = document.querySelector('.toggle');
+                let menu = document.querySelector('.menu');
+                toggle.onclick = function () {
+                    menu.classList.toggle('active')
+                }
+
+            </script>
+
+
+            <script>
+                document.querySelector('#btn').addEventListener('click', () => {
+                    document.querySelector('#meaticon').classList.toggle('hidden')
+                })
+
+                // 兑换肉变图片切换  
+                let index = 0
+                document.querySelector('#meaticon').addEventListener('click', () => {
+                    index += 1
+                    let meat
+                    if (index == 0) {
+                        document.querySelector('#meaticon').src = "./img/meat1.png"
+                    } else if (index == 1) {
+                        document.querySelector('#meaticon').src = "./img/meat2.png"
+                    }
+                    else if (index == 2) {
+                        document.querySelector('#meaticon').src = "./img/meat3.png"
+                    }
+
+                })
+            </script>
+
+
+    </body>
+
+</html>

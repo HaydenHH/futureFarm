@@ -1,0 +1,43 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Home</title>  
+    <link rel="stylesheet" type="text/css" href="home.css"/>  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                green: '#08F9A9',
+                orange: '#F45E0C',    
+                blue: '#457FFC',   
+                grey:'#B4B4B5' ,
+                yellow:'#FFE800', }}}}
+      </script>
+</head>  
+
+<body>  
+    <div class="grid justify-items-start hover justify-items-center" style="font-family:'gotham';">
+<!-- 标题 -->
+        <h1 class="mt-[200px] text-yellow text-right font-bold text-[60px]"> WELCOME TO FUTURE FARM</h1>    
+
+        <!-- 用户按钮 -->
+        <div class="grid justify-items-start hover justify-items-center md justify-items-center
+        mt-[150px] bg-green w-[180px] h-10 rounded-full" >
+                <a href="index.html">
+                 <button id=but2 class="text-[20px]" >User</button>  
+
+
+                <div class="grid justify-items-start hover justify-items-center md justify-items-center
+                mt-[50px] bg-blue w-[180px] h-10 rounded-full" >
+                <a href="administrator.html">
+                    <button id=but2 class="text-[20px]" >Administrator</button>  
+            </div>
+
+          </div>
+
+
+</body>  
+</html>
